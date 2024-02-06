@@ -8,12 +8,10 @@ function Input({
   onUpdateValue,
   value,
   isInvalid,
+  placeholder,
 }) {
   return (
     <View style={styles.inputContainer}>
-      <Text style={[styles.label, isInvalid && styles.labelInvalid]}>
-        {label}
-      </Text>
       <TextInput
         style={[styles.input, isInvalid && styles.inputInvalid]}
         autoCapitalize={false}
@@ -21,6 +19,7 @@ function Input({
         secureTextEntry={secure}
         onChangeText={onUpdateValue}
         value={value}
+        placeholder={placeholder}
       />
     </View>
   );
@@ -31,13 +30,6 @@ export default Input;
 const styles = StyleSheet.create({
   inputContainer: {
     marginVertical: 8,
-  },
-  label: {
-    color: "white",
-    marginBottom: 4,
-  },
-  labelInvalid: {
-    color: Colors.error500,
   },
   input: {
     paddingVertical: 8,
