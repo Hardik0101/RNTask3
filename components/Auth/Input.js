@@ -1,4 +1,4 @@
-import { View, Text, TextInput, StyleSheet } from "react-native";
+import { View, Text, TextInput, StyleSheet, Icon } from "react-native";
 import { Colors } from "../../constants/styles";
 
 function Input({
@@ -34,9 +34,11 @@ const styles = StyleSheet.create({
   input: {
     paddingVertical: 8,
     paddingHorizontal: 6,
-    backgroundColor: Colors.primary100,
-    borderRadius: 4,
+    borderBottomColor: Colors.primary100,
+    borderBottomWidth: 2,
     fontSize: 16,
+    color: Colors.primary100,
+    fontWeight: "700",
   },
   inputInvalid: {
     backgroundColor: Colors.error100,
