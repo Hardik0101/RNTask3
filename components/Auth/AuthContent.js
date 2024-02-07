@@ -35,15 +35,16 @@ function AuthContent({ isLogin, onAuthenticate }) {
     const emailsAreEqual = email === confirmEmail;
     const passwordsAreEqual = password === confirmPassword;
 
-    if (
-      !emailIsValid ||
-      !passwordIsValid ||
-      (!isLogin && (!emailsAreEqual || !passwordsAreEqual))
-    ) {
-      Alert.alert("Invalid input", "Please check your entered credentials.");
+    if (!emailIsValid || (!isLogin && !emailsAreEqual)) {
+      Alert.alert("Invalid input", "Please check your entered Email.");
       setCredentialsInvalid({
         email: !emailIsValid,
         confirmEmail: !emailIsValid || !emailsAreEqual,
+      });
+      return;
+    } else if (!passwordIsValid || (!isLogin && !passwordsAreEqual)) {
+      Alert.alert("Invalid input", "Please enter 6 digit password.");
+      setCredentialsInvalid({
         password: !passwordIsValid,
         confirmPassword: !passwordIsValid || !passwordsAreEqual,
       });
