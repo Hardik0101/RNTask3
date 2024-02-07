@@ -8,6 +8,7 @@ import { Colors } from "./constants/styles";
 import IconButton from "./components/ui/IconButton";
 import { useContext } from "react";
 import AuthContextProvider, { AuthContext } from "./store/auth-store";
+import OnBoardingScreen from "./screens/OnBoardingScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -36,7 +37,15 @@ function AuthenticatedStack() {
         headerTintColor: "white",
         contentStyle: { backgroundColor: Colors.primary500 },
       }}
+      initialRouteName="OnBoardingScreen"
     >
+      <Stack.Screen
+        name="OnBoardingScreen"
+        component={OnBoardingScreen}
+        options={{
+          title: "Steps ",
+        }}
+      />
       <Stack.Screen
         name="HomeScreen"
         component={HomeScreen}
