@@ -36,6 +36,7 @@ function AuthenticatedStack() {
         headerStyle: { backgroundColor: Colors.primary800 },
         headerTintColor: "white",
         contentStyle: { backgroundColor: Colors.primary500 },
+        headerTitleAlign: "center",
       }}
       initialRouteName="OnBoardingScreen"
     >
@@ -50,14 +51,17 @@ function AuthenticatedStack() {
         name="HomeScreen"
         component={HomeScreen}
         options={{
+          title: "Home Screen",
           headerRight: ({ tintColor }) => (
             <IconButton
-              icon="exit"
+              icon="exit-outline"
               color={tintColor}
               size={24}
               onPress={authCtx.logout}
             />
           ),
+          headerLeft: () => null,
+          headerBackVisible: false,
         }}
       />
     </Stack.Navigator>

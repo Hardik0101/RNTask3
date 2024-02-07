@@ -3,7 +3,14 @@ import { View, Image, Text, TouchableOpacity, StyleSheet } from "react-native";
 import IconButton from "./IconButton";
 import { Colors } from "../../constants/styles";
 
-const ObScreen = ({ image, text, onNext, onPrevious }) => {
+const ObScreen = ({
+  image,
+  text,
+  onNext,
+  onPrevious,
+  disabled,
+  currentStep,
+}) => {
   return (
     <View style={styles.container}>
       <Image source={image} style={styles.image} />
@@ -14,6 +21,7 @@ const ObScreen = ({ image, text, onNext, onPrevious }) => {
           color="white"
           size={24}
           onPress={onPrevious}
+          disabled={currentStep === 0}
         />
         <IconButton
           icon="chevron-forward-outline"
