@@ -24,7 +24,6 @@ const OnBoardingScreen = () => {
     }
   };
 
-  // Define your onboarding step
   const onboardingSteps = [
     {
       image: require("../assets/images/step1.png"),
